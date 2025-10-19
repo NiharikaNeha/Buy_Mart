@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+    /* Color */
+  --primary-color: rgba(0, 104, 200, 1);
+  --secondary-color: rgba(221, 40, 49, 1);
+  --black: #000;
+  --white: #fff;
+  --yellow: #ffc904;
+
+  /* Transition */
+  --transition-regular:0.3s;
+  --transition-slow:0.6s;
+
+  /* Font */
+  --Bricolage-font: "Bricolage Grotesque", sans-serif;
+  --Plus-Jakarta-font: "Plus Jakarta Sans", sans-serif;
+}

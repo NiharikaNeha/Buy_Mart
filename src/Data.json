@@ -1,0 +1,118 @@
+{
+  "Products": [
+    {
+      "Id": 1,
+      "Name": "Wireless Audio System Multiroom 360° Full Base Audio",
+      "Category": "Speakers",
+      "Price": "₹685.00",
+      "ProductsImage": "/public/Images/Product-01.png"
+    },
+    {
+      "Id": 2,
+      "Name": "Tablet White EliteBook Resolve 810 G2",
+      "Category": "Laptop",
+      "OldPrice": "₹12,999.00",
+      "Price": "₹11,999.00",
+      "ProductsImage": "/public/Images/Product-02.png"
+    },
+    {
+      "Id": 3,
+      "Name": "Purple Solo 2 Wireless",
+      "Category": "Headphones",
+      "Price": "₹800.00",
+      "ProductsImage": "/public/Images/Product-03.png"
+    },
+    {
+      "Id": 4,
+      "Name": "Smartphone 6S 32GB LTE",
+      "Category": "Phones",
+      "Price": "₹10,000.00",
+      "ProductsImage": "/public/Images/Product-04.png"
+    },
+    {
+      "Id": 5,
+      "Name": "WideScreen NX Mini F1 SMART NX",
+      "Category": "Camera",
+      "Price": "₹3,000.00",
+      "ProductsImage": "/public/Images/Product-05.png"
+    },
+    {
+      "Id": 6,
+      "Name": "Full Color LaserJet Pro M452dn",
+      "Category": "Printer",
+      "Price": "₹1,000.00",
+      "ProductsImage": "/public/Images/Product-06.png"
+    },
+    {
+      "Id": 7,
+      "Name": "Game Console Controller + USB 3.0 Cable",
+      "Category": "Gaming",
+      "OldPrice": "₹700.00",
+      "Price": "₹500.00",
+      "ProductsImage": "/public/Images/Product-07.png"
+    },
+    {
+      "Id": 8,
+      "Name": "Tablet Air 3 WiFi 64GB Gold",
+      "Category": "Tablets",
+      "Price": "₹629.00",
+      "ProductsImage": "/public/Images/Product-08.png"
+    },
+    {
+      "Id": 9,
+      "Name": "Tablet White EliteBook Resolve 810 G2",
+      "Category": "Laptops & Computers",
+      "Price": "₹1,299.00",
+      "ProductsImage": "/public/Images/Product-09.png"
+    },
+    {
+      "Id": 10,
+      "Name": "Pendrive USB 3.0 Flash 64GB",
+      "Category": "Accessories",
+      "Price": "₹110.00",
+      "ProductsImage": "/public/Images/Product-10.png"
+    },
+    {
+      "Id": 11,
+      "Name": "SmartWatch 2.0 LTE WiFi",
+      "Category": "Smartwatch",
+      "Price": "₹1,100.00",
+      "ProductsImage": "/public/Images/Product-11.png"
+    },
+    {
+      "Id": 12,
+      "Name": "Gear Virtual Reality",
+      "Category": "Accessories",
+      "Price": "₹799.00",
+      "ProductsImage": "/public/Images/Product-12.png"
+    },
+    {
+      "Id": 13,
+      "Name": "Wireless Audio System Multiroom 360° Full Base Audio",
+      "Category": "Speakers",
+      "Price": "₹3,000.00",
+      "ProductsImage": "/public/Images/Product-13.png"
+    },
+    {
+      "Id": 14,
+      "Name": "Wireless Audio System Multiroom 360° ",
+      "Category": "Phones",
+      "Price": "₹10,000.00",
+      "ProductsImage": "/public/Images/Product-14.png"
+    },
+    {
+      "Id": 15,
+      "Name": "Tablet Thin EliteBook Revolve 810 G6",
+      "Category": "PC",
+      "Price": "₹15,000.00",
+      "ProductsImage": "/public/Images/Product-15.png"
+    },
+    {
+      "Id": 16,
+      "Name": "NoteBook Black Spire V Nitro VN7-591G",
+      "Category": "Smartwatch",
+      "Price": "₹485.00",
+      "ProductsImage": "/public/Images/Product-16.png"
+    }
+  ]
+}
