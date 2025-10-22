@@ -4,8 +4,10 @@ import {
   FaUserCircle,
   FaGlobeAmericas,
   FaSearch,
-  FaPhoneAlt,
+  FaRegHeart,
 } from "react-icons/fa";
+import { LuPhone, LuShoppingCart } from "react-icons/lu";
+import { MdMenuOpen } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -95,14 +97,37 @@ const Navbar = () => {
         </div>
         <div className="get-help flex gap-5 items-center w-1/3 justify-end">
           <div className="flex gap-2 items-center">
-            <span className="text-3xl text-gray-500"><FaPhoneAlt /></span>
+            <span className="text-3xl text-gray-500">
+              <LuPhone />
+            </span>
             <div className="flex flex-col text-sm">
-              <span className="text-gray-500">Need Help?</span>
-              <span className="text-yellow-600 font-bold">+91 12345 09876</span>
+              <span className="text-gray-500 font-bold">Need</span>
+              <span className="text-yellow-500 font-bold">Help?</span>
             </div>
           </div>
+          <Link to="/wishlist" className="flex gap-2 items-center">
+            <span className="text-3xl text-gray-500">
+              <FaRegHeart />
+            </span>
+            <div className="flex flex-col text-sm">
+              <span className="text-gray-500 font-bold">My</span>
+              <span className="text-yellow-500 font-bold">Wishlist</span>
+            </div>
+          </Link>
+          <Link to="/cart" className="flex gap-2 items-center">
+            <span className="text-3xl text-gray-500">
+              <LuShoppingCart />
+            </span>
+            <div className="flex flex-col text-sm">
+              <span className="text-gray-500 font-bold">My</span>
+              <span className="text-yellow-500 font-bold">Cart</span>
+            </div>
+          </Link>
         </div>
       </div>
+
+      {/* Bottom Navbar */}
+      <div className={`w-full px-[5%] lg:px-[12%] py-6 flex justify-between items-center gap-6 transition-all duration-500 ${menuOpen ? 'h-auto' : ''}`}></div>
     </>
   );
 };
