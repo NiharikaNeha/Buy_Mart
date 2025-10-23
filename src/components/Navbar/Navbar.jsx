@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaBolt,
   FaUserCircle,
@@ -6,11 +6,25 @@ import {
   FaSearch,
   FaRegHeart,
 } from "react-icons/fa";
-import { LuPhone, LuShoppingCart } from "react-icons/lu";
-import { MdMenuOpen } from "react-icons/md";
+import { LuMenu, LuPhone, LuShoppingCart } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const [open, setOpen] = useState(false);
+
+  const Categories = [
+    ["SmartPhone", "📱"],
+    ["Laptop", "💻"],
+    ["Camera", "📷"],
+    ["HeadPhones", "🎧"],
+    ["PC Gaming", "🎮"],
+    ["Tablets", "📱"],
+    ["Television", "📺"],
+  ];
+
   return (
     <>
       <nav className="w-full bg-black text-white text-sm py-3 px-[20%] lg:px-[12%] flex justify-between items-center">
@@ -40,7 +54,7 @@ const Navbar = () => {
           </div>
 
           {/* Info */}
-          <p className="hide">Free Shipping On All Orders over $100</p>
+          <p className="hide">Free Shipping On All Orders over ₹100</p>
         </div>
 
         {/* RIGHT SECTION */}
@@ -127,7 +141,36 @@ const Navbar = () => {
       </div>
 
       {/* Bottom Navbar */}
-      <div className={`w-full px-[5%] lg:px-[12%] py-6 flex justify-between items-center gap-6 transition-all duration-500 ${menuOpen ? 'h-auto' : ''}`}></div>
+      <div
+        className={`w-full px-[5%] lg:px-[12%] py-6 flex justify-between items-center gap-6 transition-all duration-500 ${
+          menuOpen ? "h-auto" : ""
+        }`}
+      >
+        <div className="relative w-1/5 hide">
+          <div
+            className="flex items-center justify-between cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-xl">
+                <LuMenu />
+              </span>
+              <span className="font-bold">Shop Categories</span>
+            </div>
+          </div>
+          {open && (
+            <ul className="absolute top-full left-0 bg-white shadow-md overflow-hidden mt-2 w-full z-40 transition-all duration-300">
+              {Categories.map(([label, icon], i) => (
+                <a href="#" key={i} className="flex items-center gap-3 px-4 py-2 border-b last:border-none hover:bg-gray-100">
+                  <span>{icon}</span>
+                  <span>{label}</span>
+                </a>
+              ))}
+            </ul>
+          )}
+        </div>
+        <ul className="flex"></ul>
+      </div>
     </>
   );
 };
