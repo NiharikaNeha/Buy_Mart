@@ -161,7 +161,11 @@ const Navbar = () => {
           {open && (
             <ul className="absolute top-full left-0 bg-white shadow-md overflow-hidden mt-2 w-full z-40 transition-all duration-300">
               {Categories.map(([label, icon], i) => (
-                <a href="#" key={i} className="flex items-center gap-3 px-4 py-2 border-b last:border-none hover:bg-gray-100">
+                <a
+                  href="#"
+                  key={i}
+                  className="flex items-center gap-3 px-4 py-2 border-b last:border-none hover:bg-gray-100"
+                >
                   <span>{icon}</span>
                   <span>{label}</span>
                 </a>
@@ -169,7 +173,69 @@ const Navbar = () => {
             </ul>
           )}
         </div>
-        <ul className="flex"></ul>
+        <ul className="flex gap-10 w-3/5 nav-menu font-bold">
+          <li>
+            <Link
+              to="/home"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/shop"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              Shop
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/blog"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/faqs"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              Faq's
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="hover:text-yellow-500 text-xl transition"
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+
+        <Link to="/wishlist" className="flex items-center gap-3 hide">
+          <span className="text-2xl text-gray-600 ">
+            <FaRegHeart />
+          </span>
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-sm">Today's Deal</span>
+            <span className="bg-red-600 text-white text-sm px-1.5 pt-1 pb-1 rounded-sm uppercase relative">
+              hot
+            </span>
+          </div>
+        </Link>
+        {menuOpen && <span></span>}
       </div>
     </>
   );
