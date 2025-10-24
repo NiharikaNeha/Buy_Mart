@@ -6,6 +6,7 @@ import {
   FaSearch,
   FaRegHeart,
 } from "react-icons/fa";
+import { RxCross2 } from "react-icons/rx";
 import { LuMenu, LuPhone, LuShoppingCart } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
@@ -235,7 +236,12 @@ const Navbar = () => {
             </span>
           </div>
         </Link>
-        {menuOpen && <span></span>}
+        {menuOpen && (
+          <span
+            onClick={toggleMenu}
+            className="text-2xl absolute top-4 right-4 cursor-pointer"
+          ><RxCross2 /></span>
+        )}
       </div>
     </>
   );
