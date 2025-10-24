@@ -93,7 +93,7 @@ const Navbar = () => {
         </div>
         <div className="product-search flex items-center h-14 border-4 border-yellow-500 rounded-md w-1/2 overflow-hidden">
           <select className="bg-gray-100 font-semibold p-2 w-1/2 border-none outline-none">
-            <option>All Categories</option>
+            <option>All Category</option>
             <option>Camera</option>
             <option>Accessories</option>
             <option>Camera & Lenses</option>
