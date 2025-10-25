@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 @import "tailwindcss";
 
-*{
+* {
   margin: 0;
   box-sizing: border-box;
   list-style: none;
@@ -11,7 +11,7 @@
 }
 
 :root {
-    /* Color */
+  /* Color */
   --primary-color: rgba(0, 104, 200, 1);
   --secondary-color: rgba(221, 40, 49, 1);
   --black: #000;
@@ -19,10 +19,89 @@
   --yellow: #ffc904;
 
   /* Transition */
-  --transition-regular:0.3s;
-  --transition-slow:0.6s;
+  --transition-regular: 0.3s;
+  --transition-slow: 0.6s;
 
   /* Font */
   --Bricolage-font: "Bricolage Grotesque", sans-serif;
   --Plus-Jakarta-font: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Hero Section */
+.bg-element {
+  position: relative;
+}
+
+.bg-element:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 200px;
+  background-color: var(--yellow);
+  filter: blur(250px);
+  z-index: -1;
+}
+.bg-element:before {
+  content: "";
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 250px;
+  height: 200px;
+  background-color: var(--yellow);
+  filter: blur(250px);
+  z-index: -1;
+}
+
+.hero-bg {
+  height: 80vh;
+  width: 100%;
+  background-image: url(assets/hero-banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 75%;
+  height: 100%;
+}
+
+.hero-content h1 {
+  opacity: 0;
+  animation: Anim-fade-bottom var(--transition-regular) 0.6s forwards linear;
+}
+
+.hero-content h5 {
+  opacity: 0;
+  animation: Anim-fade-bottom var(--transition-regular) 0.9s forwards linear;
+}
+
+.hero-content .hero-span {
+  opacity: 0;
+  animation: Anim-fade-bottom var(--transition-regular) 1.1s forwards linear;
+}
+
+.hero-content button {
+  opacity: 0;
+  animation: Anim-fade-bottom var(--transition-regular) 1.2s forwards linear;
+}
+
+.hero-image  {
+  opacity: 0;
+  animation: Anim-fade-bottom var(--transition-regular) 1.5s forwards linear;
+}
+
+@keyframes Anim-fade-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
