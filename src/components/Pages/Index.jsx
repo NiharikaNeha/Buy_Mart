@@ -202,6 +202,15 @@ const Index = () => {
         <span className="text-xl font-semibold bg-yellow-300 px-5 py-2 rounded-full">Our Products</span>
         <h2 className="text-5xl font-bold font-bricolage pt-4">Popular Products</h2>
       </div>
+
+      {/* PRODUCTS */}
+      <div className="product-wrapper px-[8%] lg:px-[12%] py-10 grid grid-cols-1 lg:grid-cols-4 gap-6">
+        {/* Special Offer Card */}
+        <div className="bg-white border-2 border-yellow-400 p-6 product-banner-wrap rounded-xl flex flex-col items-center justify-center text-center relative">
+          <span className="text-xl text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">Special Offer</span>
+          <div className="absolute top-4 right-4 bg-yellow-400 text-white rounded-full h-12 w-12 flex items-center justify-center">Save <br />₹120</div>
+        </div>
+      </div>
     </>
   );
 };
