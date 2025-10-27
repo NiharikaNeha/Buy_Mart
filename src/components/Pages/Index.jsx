@@ -28,6 +28,10 @@ import brand7 from "../../assets/asus.png";
 import bannerCard1 from "../../assets/banner-card-3.jpg";
 
 const Index = () => {
+  const products = ProductData.Products;
+  const specialOffer = products.find((p) => p.Id === 7);
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="bg-element"></div>
@@ -151,7 +155,9 @@ const Index = () => {
               <small className="bg-yellow-500 text-white text-xl px-4 py-2 w-fit rounded-md rounded-tl-none">
                 New Products
               </small>
-              <h3 className="text-lg md:text-xl font-semibold font-bricolage">Relaese Date & Price</h3>
+              <h3 className="text-lg md:text-xl font-semibold font-bricolage">
+                Relaese Date & Price
+              </h3>
               <p className="text-base md:text-sm">Today's Super Offer</p>
             </div>
           </div>
@@ -164,7 +170,9 @@ const Index = () => {
               <small className="bg-yellow-500 text-white text-xl px-4 py-2 w-fit rounded-md rounded-tl-none">
                 New Products
               </small>
-              <h3 className="text-lg md:text-xl font-semibold font-bricolage">Relaese Date & Price</h3>
+              <h3 className="text-lg md:text-xl font-semibold font-bricolage">
+                Relaese Date & Price
+              </h3>
               <p className="text-base md:text-sm">Today's Super Offer</p>
             </div>
           </div>
@@ -177,7 +185,9 @@ const Index = () => {
               <small className="bg-yellow-500 text-white text-xl px-4 py-2 w-fit rounded-md rounded-tl-none">
                 New Products
               </small>
-              <h3 className="text-lg md:text-xl font-semibold font-bricolage">Relaese Date & Price</h3>
+              <h3 className="text-lg md:text-xl font-semibold font-bricolage">
+                Relaese Date & Price
+              </h3>
               <p className="text-base md:text-sm">Today's Super Offer</p>
             </div>
           </div>
@@ -190,7 +200,9 @@ const Index = () => {
               <small className="bg-yellow-500 text-white text-xl px-4 py-2 w-fit rounded-md rounded-tl-none">
                 New Products
               </small>
-              <h3 className="text-lg md:text-xl font-semibold font-bricolage">Relaese Date & Price</h3>
+              <h3 className="text-lg md:text-xl font-semibold font-bricolage">
+                Relaese Date & Price
+              </h3>
               <p className="text-base md:text-sm">Today's Super Offer</p>
             </div>
           </div>
@@ -199,16 +211,76 @@ const Index = () => {
 
       {/* SECTION TITLE */}
       <div className="section-title px-[8%] lg:px-[12%] my-10">
-        <span className="text-xl font-semibold bg-yellow-300 px-5 py-2 rounded-full">Our Products</span>
-        <h2 className="text-5xl font-bold font-bricolage pt-4">Popular Products</h2>
+        <span className="text-xl font-semibold bg-yellow-300 px-5 py-2 rounded-full">
+          Our Products
+        </span>
+        <h2 className="text-5xl font-bold font-bricolage pt-4">
+          Popular Products
+        </h2>
       </div>
 
       {/* PRODUCTS */}
-      <div className="product-wrapper px-[8%] lg:px-[12%] py-10 grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <div className="product-wrapper px-[8%] lg:px-[12%] py-10 grid grid-cols-3 gap-10 ">
         {/* Special Offer Card */}
-        <div className="bg-white border-2 border-yellow-400 p-6 product-banner-wrap rounded-xl flex flex-col items-center justify-center text-center relative">
-          <span className="text-xl text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">Special Offer</span>
-          <div className="absolute top-4 right-4 bg-yellow-400 text-white rounded-full h-12 w-12 flex items-center justify-center">Save <br />₹120</div>
+        <div className=" bg-white border-2 border-yellow-400 p-6 product-banner-wrap rounded-xl flex flex-col items-center justify-center text-center relative">
+          <span className="text-xl text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">
+            Special Offer
+          </span>
+          <div className="absolute top-[22.5px] right-4 bg-yellow-400 text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-sm">
+            {" "}
+            Save <br /> ₹120
+          </div>
+          <img
+            src={specialOffer.ProductsImage}
+            alt={specialOffer.Name}
+            className="w-4/5 mx-auto my-4"
+          />
+          <h3 className="text-gray-700 text-lg font-bold">
+            {specialOffer.Name}
+          </h3>
+          <div className="mt-2">
+            <span className=" line text-gray-500">{specialOffer.OldPrice}</span>{" "}
+            <span className="text-red-600 text-xl font-bold">
+              {specialOffer.Price}
+            </span>
+          </div>
+          <div className="flex justify-between w-full mt-6 text-md font-bold">
+            <span>Available: 6</span>
+            <span>Already Sold: 20</span>
+          </div>
+          <div className="w-full bg-gray-200 h-2 rounded-full mt-1 overflow-hidden">
+            <div className="bg-yellow-400 w-1/5 h-full"></div>
+          </div>
+          <p className="mt-3 text-gray-700 text-sm font-sans">
+            Hurry Up! Offer Ends In:
+          </p>
+        </div>
+        {/* Product Cards */}
+        <div className="lg:col-span-2">
+          <div className="grid product-wrap grid-cols-2 md:grid-cols-3 gap-6">
+            {products.slice(0, 8).map((product) => (
+              <div
+                key={product.Id}
+                className="bg-white shadow-md rounded-xl p-4 flex-col items-center hover:shadow-xl transition duration-300 group border border-gray-200 cursor-pointer"
+              >
+                <p className="text-xs text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">
+                  {product.Category}
+                </p>
+                <img
+                  src={product.ProductsImage}
+                  alt={product.Name}
+                  className="w-4/5 h-32 object-contain group-hover:scale-105 transition-transform duration-300"
+                  onClick={() => navigate(`/product/${product.Id}`)}
+                />
+                <h4
+                  onClick={() => navigate(`/product/${product.Id}`)}
+                  className="text-lg font-medium mt-3 text-gray-800 hover:underline line-clamp-2"
+                >
+                  {product.Name}
+                </h4>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

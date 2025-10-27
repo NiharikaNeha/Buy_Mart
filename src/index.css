@@ -184,3 +184,6 @@
     background-repeat: no-repeat;
   }
 } */
+ .line {
+  text-decoration: line-through;
+ }
