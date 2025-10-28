@@ -26,11 +26,28 @@ import brand5 from "../../assets/oppo.png";
 import brand6 from "../../assets/panasonic.png";
 import brand7 from "../../assets/asus.png";
 import bannerCard1 from "../../assets/banner-card-3.jpg";
+import { LuShoppingCart } from "react-icons/lu";
 
 const Index = () => {
   const products = ProductData.Products;
   const specialOffer = products.find((p) => p.Id === 7);
   const navigate = useNavigate();
+  const handleAddToCart = (product) => {
+    const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const exists = cart.some(item => item.Id === product.Id);
+
+    if(!exists) {
+      const updatedCart = [...cart, {...product, quantity: 1}];
+      localStorage.setItem('cartItems', JSON.stringify(updatedCart))
+      toast.success('Item Added To Cart');
+    }
+    else {
+      toast.warning('Item Already In Cart')
+    }
+    setTimeout(() => {
+      navigate('/cart')
+    }, 1000);
+  }
 
   return (
     <>
@@ -278,9 +295,33 @@ const Index = () => {
                 >
                   {product.Name}
                 </h4>
+                <div className="flex mt-5 flex-row items-center justify-between w-full">
+                  {product.OldPrice ? (
+                    <div className="mt-1 text-md">
+                      <span className="line text-gray-400">
+                        {product.OldPrice}
+                      </span>{" "}
+                      <span className="text-red-600 font-bold">
+                        {product.Price}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="text-lg font-bold mt-1">
+                      {product.Price}
+                    </div>
+                  )}
+                  <button className="bg-yellow-500 text-white rounded-full w-[35px] h-[35px] flex items-center justify-center hover:bg-red-500 hover:shadow-xl transition"
+                  onClick={() => handleAddToCart(product)}>
+                    <LuShoppingCart className="text-[20px] font-bold" />
+                  </button>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* Toaster */}
+          <ToastContainer position='top-right' autoClose={1500}/>
+
         </div>
       </div>
     </>
