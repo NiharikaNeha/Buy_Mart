@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { toast, ToastContainer } from "react-toastify";
 import { Autoplay } from "swiper/modules";
