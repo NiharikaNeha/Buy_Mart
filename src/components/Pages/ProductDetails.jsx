@@ -13,7 +13,7 @@ import brand4 from "../../assets/lenovo.png";
 import brand5 from "../../assets/oppo.png";
 import brand6 from "../../assets/panasonic.png";
 import brand7 from "../../assets/asus.png";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -96,13 +96,57 @@ const ProductDetails = () => {
     }, 1000);
   };
 
-  if(!product) {
+  if (!product) {
     return (
-      <div className="p-10 text-center text-xl text-red-600">Product Not Found</div>
-    )
+      <div className="p-10 text-center text-xl text-red-600">
+        Product Not Found
+      </div>
+    );
   }
 
-  return <div>ProductDetails</div>;
+  return (
+    <>
+      <ToastContainer position="top-right" autoClose={1500} />
+
+      {/* 🟡 PAGE SECTION */}
+      <div className="w-full bg-yellow-100 py-4 px-[8%] lg:px-[12%]">
+        <div className="text-lg text-gray-600 flex justify-center items-center space-x-2">
+          <Link to="/" className="hover:underline text-gray-700 font-medium">
+            Home
+          </Link>
+          <span className="text-gray-500">&nbsp; / &nbsp;</span>
+          <span className="text-gray-900 font-semibold">Product Details</span>
+        </div>
+      </div>
+
+      {/* 🟢 PRODUCT DETAILS */}
+      <div className="flex flex-col md:flex-row items-center gap-10 px-[8%] lg:px-[12%] py-20">
+        {/* LEFT SECTION - Image + Zoom */}
+        <div className="w-full md:w-1/2 flex gap-6 justify-center border rounded-xl shadow-md p-6 relative bg-white">
+          <div
+            className="relative w-[280px] h-[280px] border rounded-xl shadow-md overflow-hidden cursor-zoom-in"
+            onMouseEnter={() => setShowZoom(true)}
+            onMouseLeave={() => setShowZoom(false)}
+            onMouseMove={handleMouseMove}
+          >
+            <img
+              src={product.ProductsImage}
+              alt={product.Name}
+              className="w-full h-full object-contain transition-transform duration-200"
+              style={
+                showZoom
+                  ? {
+                      transformOrigin: `${mousePosition.x}% ${mousePosition.y}%`,
+                      transform: "scale(1.1)",
+                    }
+                  : { transform: "scale(1)" }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default ProductDetails;
