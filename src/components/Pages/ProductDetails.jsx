@@ -108,7 +108,7 @@ const ProductDetails = () => {
     <>
       <ToastContainer position="top-right" autoClose={1500} />
 
-      {/* 🟡 PAGE SECTION */}
+      {/* PAGE SECTION */}
       <div className="w-full bg-yellow-100 py-4 px-[8%] lg:px-[12%]">
         <div className="text-lg text-gray-600 flex justify-center items-center space-x-2">
           <Link to="/" className="hover:underline text-gray-700 font-medium">
@@ -119,9 +119,8 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      {/* 🟢 PRODUCT DETAILS */}
+      {/* PRODUCT DETAILS */}
       <div className="flex flex-col md:flex-row items-center gap-10 px-[8%] lg:px-[12%] py-20">
-        {/* LEFT SECTION - Image + Zoom */}
         <div className="w-full md:w-1/2 flex gap-6 justify-center border rounded-xl shadow-md p-6 relative bg-white">
           <div
             className="relative w-[280px] h-[280px] border rounded-xl shadow-md overflow-hidden cursor-zoom-in"
@@ -142,6 +141,54 @@ const ProductDetails = () => {
                   : { transform: "scale(1)" }
               }
             />
+          </div>
+        </div>
+        <div className="w-full md:w-1/2">
+          <p className="text-md font-semibold bg-red-500 inline-block px-3 py-2 rounded text-white mb-4">
+            {product.Category}
+          </p>
+          <h2 className="text-3xl font-bold font-bricolage text-black mb-3">
+            {product.Name}
+          </h2>
+          <div className="text-2xl font-bold text-red-600 mb-2">
+            {product.Price}
+            {product.OldPrice && (
+              <span className="text-gray-400 text-lg line ml-3 pl-2">
+                {product.OldPrice}
+              </span>
+            )}
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa in
+            perspiciatis molestias. Eum saepe aperiam nemo inventore animi
+            quaerat illum.
+          </p>
+          <div className="flex gap-3 pt-3 pb-3">
+            <button
+              onClick={handleAddToCart}
+              className="font-medium mt-4 px-6 py-2 rounded bg-yellow-300 text-black hover:bg-yellow-400 transition"
+            >
+              {" "}
+              Add To Cart
+            </button>
+            <button
+              onClick={handleAddToWishlist}
+              className="font-medium mt-4 px-6 py-2 rounded bg-yellow-500 text-black hover:bg-yellow-400 transition"
+            >
+              {" "}
+              Add To Wishlist
+            </button>
+          </div>
+          <div className="my-3 bg-red-100 p-3">
+            <p className="text-semibold">
+              - Estimated Delivery Time 14-30 days
+            </p>
+            <p className="text-semibold">
+              - 18 Months Warranty At Genuine Warranty center
+            </p>
+            <p className="text-semibold">
+              - Use Coupon To Get Extra ₹25 Off ( Only For This Product)
+            </p>
           </div>
         </div>
       </div>
