@@ -57,7 +57,7 @@ const ProductDetails = () => {
       updatedList = wishList.filter((item) => item.Id !== product.Id);
       toast.info("Item Removed From The Wishlist");
     } else {
-      updatedList = [...wishlist, product];
+      updatedList = [...wishList, product];
       toast.success("Item Added To Wishlist");
     }
     localStorage.setItem("wishlistItems", JSON.stringify(updatedList));
@@ -65,20 +65,21 @@ const ProductDetails = () => {
   };
 
   const handleAddToWishlist = () => {
-    const wishList = JSON.parse(localStorage.getItem("wishlistItems")) || [];
-    const exists = wishList.some((item) => item.Id === product.Id);
+  const wishList = JSON.parse(localStorage.getItem("wishlistItems")) || [];
+  const exists = wishList.some((item) => item.Id === product.Id);
 
-    if (exists) {
-      const updatedList = [...wishList, product];
-      localStorage.setItem("wishlistItems", JSON.stringify(updatedList));
-    }
-
+  if (!exists) {
+    const updatedList = [...wishList, product];
+    localStorage.setItem("wishlistItems", JSON.stringify(updatedList));
     toast.success("Item Added To Wishlist");
+  } else {
+    toast.info("Item Already In Wishlist");
+  }
 
-    setTimeout(() => {
-      navigate("/wishlist");
-    }, 1000);
-  };
+  setTimeout(() => {
+    navigate("/wishlist");
+  }, 1000);
+};
 
   const handleAddToCart = () => {
     const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
