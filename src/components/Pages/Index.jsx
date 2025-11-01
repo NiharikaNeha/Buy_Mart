@@ -74,7 +74,7 @@ const Index = () => {
                     </h5>
                     <span className="hero-span text-2xl sm:text-3xl text-gray-800 font-semibold mt-3 block">
                       FROM
-                      <div className="text-5xl sm:text-6xl font-bold text-gray-800">
+                      <div className="text-5xl sm:text-6xl font-bold text-gray-800 pb-5">
                         <sup>₹</sup>
                         {slide.price}
                       </div>
@@ -104,7 +104,7 @@ const Index = () => {
           className="relative rounded-2xl overflow-hidden text-center sm:text-left flex items-center justify-start bg-cover bg-center"
           style={{ backgroundImage: `url(${banner5})`, minHeight: "300px" }}
         >
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative z-10 p-6 sm:p-10 md:p-14 text-white w-full sm:w-3/4 lg:w-1/2">
             <small className="bg-yellow-500 text-sm sm:text-base md:text-lg px-4 py-2 w-fit rounded-md inline-block mb-3">
               EXCLUSIVE HEADPHONE
@@ -119,14 +119,14 @@ const Index = () => {
         </div>
 
         {/* Grid Banners */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
           {[banner1, banner2, banner3, banner4].map((banner, index) => (
             <div
               key={index}
               className="relative rounded-2xl overflow-hidden flex items-center justify-start bg-cover bg-center"
               style={{ backgroundImage: `url(${banner})`, minHeight: "250px" }}
             >
-              <div className="absolute inset-0 bg-black/45"></div>
+              <div className="absolute inset-0 bg-black/20"></div>
               <div className="relative z-10 p-6 sm:p-8 text-white">
                 <small className="bg-yellow-500 text-xs sm:text-sm md:text-base px-3 py-2 rounded-md inline-block mb-2">
                   New Products
