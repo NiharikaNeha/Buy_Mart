@@ -33,7 +33,7 @@ const ProductDetails = () => {
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } =
-      e.currentTarget.getBoundingClientReact();
+      e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - left) / width) * 100;
     const y = ((e.clientX - top) / height) * 100;
     setMousePosition((x, y));
@@ -191,6 +191,171 @@ const ProductDetails = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* POLICIES */}
+      <div className="px-[8%] lg:[12%]">
+        <h2 className="font-bricolage font-bold text-3xl mb-5">
+          {" "}
+          Shipping Policy
+        </h2>
+        <p className="mb-3 text-md">
+          At our Company, we understand the importance of timely delivery. We
+          offer a variety of shipping options to suit your needs, including
+          standard, expedited, and express shipping. Our dedicated team works
+          digently to process and dispatch your orders promptly, aiming to
+          deliver them to your doorstep within the estimated and interframe.
+        </p>
+        <p className="mb-3 text-md">
+          ● We strive to provide fast reliable shipping to our shipping to our
+          customers. Here's everything you need to know about our shipping
+          process.
+        </p>
+        <p className="mb-1">● Dispatch: Within 24 Hours</p>
+        <p className="mb-1">
+          ● Free shipping across all products on a minnimum purchase of ₹895
+        </p>
+        <p className="mb-1">● International delivery time 5 to 7 business days</p>
+        <p className="mb-1">● Cash On Delivery(COD) might be available</p>
+        <p className="mb-1">● Easy 30 days returns and exchanges</p>
+        <p className="mb-1">
+          ● Please note that delivery times are estimate and may vary depending on
+          factors such as product availability, destiination, and carrier delay.
+        </p>
+
+        <h2 className="font-bricolage font-bold text-3xl mb-5 pt-10">
+          {" "}
+          Returns Policy
+        </h2>
+        <p className="text-md mb-5 ">
+          We want you to be completely satisfied with your purchase from our
+          website. Id for any reasons you are not entirely happy with your
+          order, we're here to help. Certain exclusions and connditions may
+          apply, so we encourage you to review our detailed return policy for
+          more information. Rest assured, our goal is to ensure your complete
+          satisfaction with every purchase you make from our website.
+        </p>
+        <p className="mb-1">
+          ● Returned items must be unused, undamaged, and in the same condition as
+          recieved.
+        </p>
+        <p className="mb-1">
+          ● Original tags, labels, and packages must be intact and included with
+          the returned item.
+        </p>
+        <p className="mb-1">
+          ● Proof of purchase, such as your order confirmation or receipt, is
+          required for all returns.
+        </p>
+      </div>
+
+      {/* Add Reviews */}
+      <div className="px-[8%] lg:px-[10%] py-[50px]">
+        <div className="px-[2%] py-[20px] border rounded-2xl shadow-lg">
+          <h2 className="text-2xl font-bold pb-4 text-gray-800 font-bricolage">
+            Add A Review
+          </h2>
+          <form className="space-y-5">
+            <div>
+              <label className="block pt-2 text-lg font-semibold text-gray-700">
+                Your Name
+              </label>
+              <input
+                type="text"
+                placeholder="Enter Your Name"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-yellow-400"
+              />
+            </div>
+            <div>
+              <label className="block pt-2 text-lg font-semibold text-gray-700">
+                Ratings
+              </label>
+              <select
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-yellow-400"
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Select Rating
+                </option>
+                <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+                <option value="4">⭐⭐⭐⭐ (4)</option>
+                <option value="3">⭐⭐⭐ (3)</option>
+                <option value="2">⭐⭐ (2)</option>
+                <option value="1">⭐ (1)</option>
+              </select>
+            </div>
+            <div>
+              <label className="block pt-2 text-lg font-semibold text-gray-700">
+                Your Review
+              </label>
+              <textarea
+                rows="4"
+                placeholder="Your Review For Us"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-yellow-400"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold px-6 py-2 rounded-lg transition duration-300"
+            >
+              Submit Your Review
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {/* Brands */}
+      <div className="px-[8%] lg:px-[12%] py-10">
+        <Swiper
+          slidesPerView={2}
+          spaceBetween={20}
+          loop={true}
+          autoplay={{ delay: 2000 }}
+          breakpoints={{
+            1399: { slidesPerView: 5 },
+            1199: { slidesPerView: 5 },
+            991: { slidesPerView: 4 },
+            575: { slidesPerView: 3 },
+            0: { slidesPerView: 3 },
+          }}
+          modules={Autoplay}
+        >
+          <SwiperSlide>
+            <div className="flex items-center justify-center h-20">
+              <img src={brand1} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center justify-center h-20">
+              <img src={brand2} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center justify-center h-20">
+              <img src={brand3} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center justify-center h-20">
+              <img src={brand4} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center justify-center h-20">
+              <img src={brand5} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center justify-center h-20">
+              <img src={brand6} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex items-center justify-center h-20">
+              <img src={brand7} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </>
   );
