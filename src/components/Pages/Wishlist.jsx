@@ -4,6 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaHeart } from "react-icons/fa";
 import { FaRegFaceSadCry } from "react-icons/fa6";
 import { MdOutlineRemoveCircle } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState([]);
@@ -104,6 +105,8 @@ const Wishlist = () => {
               ))}
             </tbody>
           </table>
+
+          <div className="mt-10 text-center"><Link to='/shop' className="inline-flex items-center gap-2 px-6 y-3 text-md font-semibold text-yellow-500 border border-yellow-500 rounded-full hover:bg-yellow-500 hover:text-white transition-all"></Link></div>
         </div>
       )}
     </>
