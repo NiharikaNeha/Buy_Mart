@@ -17,6 +17,7 @@
     "react-icons": "^5.5.0",
     "react-inner-image-zoom": "^4.0.1",
     "react-router-dom": "^7.9.4",
+    "react-scroll": "^1.9.3",
     "react-toastify": "^11.0.5",
     "sweetalert2": "^11.26.3",
     "swiper": "^12.0.3",

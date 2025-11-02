@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
-import { FaHeart } from "react-icons/fa";
+import { FaArrowCircleLeft, FaHeart } from "react-icons/fa";
 import { FaRegFaceSadCry } from "react-icons/fa6";
 import { MdOutlineRemoveCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -42,61 +42,61 @@ const Wishlist = () => {
     <>
       <div className="w-full px-4 sm:px-8 lg:px-[10%] py-12 bg-white text-gray-800">
         <Toaster position="top-right" reverseOrder={false} />
-        <h1 className="flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold text-center font-bricolage gap-4">
-          <FaHeart className="text-pink-500 mr-2" /> My Wishlist
+        <h1 className="flex flex-wrap items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold text-center font-bricolage gap-3 sm:gap-4">
+          <FaHeart className="text-pink-500 mr-1 sm:mr-2" /> My Wishlist
         </h1>
       </div>
 
       {wishlist.length === 0 ? (
-        <div className="flex items-center justify-center text-center py-10 text-gray-500 gap-2">
-          <FaRegFaceSadCry className="text-2xl" /> No Item In Your Wishlist!
+        <div className="flex flex-col items-center justify-center text-center py-10 text-gray-500 gap-2 px-4">
+          <FaRegFaceSadCry className="text-2xl sm:text-3xl" /> 
+          <span className="text-base sm:text-lg">No Item In Your Wishlist!</span>
         </div>
       ) : (
-        <div className="overflow-hidden hidden md:block px-[10%]">
-          <table className="w-full text-left border-separate border-spacing-y-6">
+        <div className="overflow-x-auto px-4 sm:px-8 lg:px-[10%]">
+          <table className="min-w-full text-left border-separate border-spacing-y-4 sm:border-spacing-y-6">
             <thead>
-              <tr className="text-sm text-gray-500 border-b border-gray-200">
-                <th></th>
-                <th className="py-1 text-xl">Product</th>
-                <th className="text-center text-xl">Unit Price</th>
-                <th className="text-center text-xl">Stock</th>
-                <th className="text-center text-xl">Action</th>
+              <tr className="text-xs sm:text-sm md:text-base text-gray-500 border-b border-gray-200">
+                <th className="w-[40px] sm:w-[60px]"></th>
+                <th className="py-1 text-sm sm:text-base md:text-xl">Product</th>
+                <th className="text-center text-sm sm:text-base md:text-xl">Unit Price</th>
+                <th className="text-center text-sm sm:text-base md:text-xl">Stock</th>
+                <th className="text-center text-sm sm:text-base md:text-xl">Action</th>
               </tr>
             </thead>
             <tbody>
               {wishlist.map((product) => (
                 <tr
                   key={product.Id}
-                  className="bg-white border rounded-xl shadow-sm hover:shadow-md transition"
+                  className="bg-white border rounded-xl shadow-sm hover:shadow-md transition text-xs sm:text-sm md:text-base"
                 >
                   <td className="align-middle text-center">
                     <button
                       onClick={() => removeFromWishlist(product.Id)}
-                      className="text-xl text-gray-400 hover:text-red-600 p-3"
+                      className="text-lg sm:text-xl text-gray-400 hover:text-red-600 p-2 sm:p-3"
                       title="Remove"
                     >
-                      <MdOutlineRemoveCircle className="text-2xl" />
+                      <MdOutlineRemoveCircle className="text-xl sm:text-2xl" />
                     </button>
                   </td>
 
-                  {/* ✅ Product info section */}
-                  <td className="flex items-center gap-4 py-4 px-2">
+                  <td className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 py-3 sm:py-4 px-2">
                     <img
                       src={product.ProductsImage}
                       alt={product.Name}
-                      className="w-24 h-24 object-contain border p-2 rounded-lg"
+                      className="w-20 h-20 sm:w-24 sm:h-24 object-contain border p-1 sm:p-2 rounded-lg"
                     />
-                    <span className="font-semibold text-gray-700">{product.Name}</span>
+                    <span className="font-semibold text-gray-700 text-center sm:text-left">
+                      {product.Name}
+                    </span>
                   </td>
 
-                  <td className="text-center text-gray-700 font-medium">
-                    ₹{product.Price}
-                  </td>
+                  <td className="text-center text-gray-700 font-medium">{product.Price}</td>
                   <td className="text-center text-green-600">In Stock</td>
                   <td className="text-center">
                     <button
                       onClick={() => addToCart(product)}
-                      className="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-1 rounded"
+                      className="bg-yellow-400 hover:bg-yellow-500 text-black text-xs sm:text-sm px-3 sm:px-4 py-1 rounded"
                     >
                       Add to Cart
                     </button>
@@ -106,7 +106,15 @@ const Wishlist = () => {
             </tbody>
           </table>
 
-          <div className="mt-10 text-center"><Link to='/shop' className="inline-flex items-center gap-2 px-6 y-3 text-md font-semibold text-yellow-500 border border-yellow-500 rounded-full hover:bg-yellow-500 hover:text-white transition-all"></Link></div>
+          <div className="mt-8 sm:mt-10 text-center pb-4">
+            <Link
+              to="/shop"
+              className="inline-flex items-center gap-2 px-5 sm:px-7 py-2 sm:py-3 text-md sm:text-md font-semibold text-yellow-500 border border-yellow-500 rounded-full hover:bg-yellow-500 hover:text-white transition-all"
+            >
+              <FaArrowCircleLeft className="text-xl sm:text-2xl" />
+              Continue Shopping
+            </Link>
+          </div>
         </div>
       )}
     </>
