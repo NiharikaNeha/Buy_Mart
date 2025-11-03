@@ -96,7 +96,6 @@ const Navbar = () => {
                     key={l}
                     className="text-left px-3 py-1 hover:bg-gray-100 rounded"
                     onClick={() => {
-                      // Placeholder: you can handle selection (e.g., set locale)
                       console.log("Selected language:", l);
                       setLangOpen(false);
                     }}
@@ -127,7 +126,6 @@ const Navbar = () => {
                     key={c}
                     className="text-left px-3 py-1 hover:bg-gray-100 rounded"
                     onClick={() => {
-                      // Placeholder: handle currency selection
                       console.log("Selected currency:", c);
                       setCurrOpen(false);
                     }}
@@ -238,7 +236,6 @@ const Navbar = () => {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => {
               setCatOpen((s) => !s);
-              // close other dropdowns
               setLangOpen(false);
               setCurrOpen(false);
             }}

@@ -172,9 +172,9 @@ const Index = () => {
             {specialOffer.Name}
           </h3>
           <div className="mt-2">
-            <span className="line text-gray-500">{specialOffer.OldPrice}</span>{" "}
+            <span className="line text-gray-500">₹{specialOffer.OldPrice}</span>{" "}
             <span className="text-red-600 text-lg sm:text-xl font-bold">
-              {specialOffer.Price}
+              ₹{specialOffer.Price}
             </span>
           </div>
           <div className="flex justify-between w-full mt-6 text-xs sm:text-sm font-bold">
@@ -216,15 +216,15 @@ const Index = () => {
                   {product.OldPrice ? (
                     <div className="mt-1 text-sm sm:text-md">
                       <span className="line text-gray-400">
-                        {product.OldPrice}
+                        ₹{product.OldPrice}
                       </span>{" "}
                       <span className="text-red-600 font-bold">
-                        {product.Price}
+                        ₹{product.Price}
                       </span>
                     </div>
                   ) : (
                     <div className="text-sm sm:text-lg font-bold mt-1">
-                      {product.Price}
+                      ₹{product.Price}
                     </div>
                   )}
                   <button

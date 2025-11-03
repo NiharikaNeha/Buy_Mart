@@ -65,21 +65,20 @@ const ProductDetails = () => {
   };
 
   const handleAddToWishlist = () => {
-  const wishList = JSON.parse(localStorage.getItem("wishlistItems")) || [];
-  const exists = wishList.some((item) => item.Id === product.Id);
+    const wishList = JSON.parse(localStorage.getItem("wishlistItems")) || [];
+    const exists = wishList.some((item) => item.Id === product.Id);
 
-  if (!exists) {
-    const updatedList = [...wishList, product];
-    localStorage.setItem("wishlistItems", JSON.stringify(updatedList));
+    if (exists) {
+      const updatedList = [...wishList, product];
+      localStorage.setItem("wishlistItems", JSON.stringify(updatedList));
+    }
+
     toast.success("Item Added To Wishlist");
-  } else {
-    toast.info("Item Already In Wishlist");
-  }
 
-  setTimeout(() => {
-    navigate("/wishlist");
-  }, 1000);
-};
+    setTimeout(() => {
+      navigate("/wishlist");
+    }, 1000);
+  };
 
   const handleAddToCart = () => {
     const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -152,10 +151,10 @@ const ProductDetails = () => {
             {product.Name}
           </h2>
           <div className="text-2xl font-bold text-red-600 mb-2">
-            {product.Price}
+            ₹{product.Price}
             {product.OldPrice && (
-              <span className="text-gray-400 text-lg line ml-3 pl-2">
-                {product.OldPrice}
+              <span className="text-gray-400 text-lg line-through ml-3 pl-2">
+                ₹{product.OldPrice}
               </span>
             )}
           </div>
@@ -216,12 +215,15 @@ const ProductDetails = () => {
         <p className="mb-1">
           ● Free shipping across all products on a minnimum purchase of ₹895
         </p>
-        <p className="mb-1">● International delivery time 5 to 7 business days</p>
+        <p className="mb-1">
+          ● International delivery time 5 to 7 business days
+        </p>
         <p className="mb-1">● Cash On Delivery(COD) might be available</p>
         <p className="mb-1">● Easy 30 days returns and exchanges</p>
         <p className="mb-1">
-          ● Please note that delivery times are estimate and may vary depending on
-          factors such as product availability, destiination, and carrier delay.
+          ● Please note that delivery times are estimate and may vary depending
+          on factors such as product availability, destiination, and carrier
+          delay.
         </p>
 
         <h2 className="font-bricolage font-bold text-3xl mb-5 pt-10">
@@ -237,8 +239,8 @@ const ProductDetails = () => {
           satisfaction with every purchase you make from our website.
         </p>
         <p className="mb-1">
-          ● Returned items must be unused, undamaged, and in the same condition as
-          recieved.
+          ● Returned items must be unused, undamaged, and in the same condition
+          as recieved.
         </p>
         <p className="mb-1">
           ● Original tags, labels, and packages must be intact and included with
@@ -323,37 +325,65 @@ const ProductDetails = () => {
         >
           <SwiperSlide>
             <div className="flex items-center justify-center h-20">
-              <img src={brand1} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+              <img
+                src={brand1}
+                className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition"
+                alt=""
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex items-center justify-center h-20">
-              <img src={brand2} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+              <img
+                src={brand2}
+                className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition"
+                alt=""
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex items-center justify-center h-20">
-              <img src={brand3} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+              <img
+                src={brand3}
+                className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition"
+                alt=""
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex items-center justify-center h-20">
-              <img src={brand4} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+              <img
+                src={brand4}
+                className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition"
+                alt=""
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex items-center justify-center h-20">
-              <img src={brand5} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+              <img
+                src={brand5}
+                className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition"
+                alt=""
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex items-center justify-center h-20">
-              <img src={brand6} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+              <img
+                src={brand6}
+                className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition"
+                alt=""
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex items-center justify-center h-20">
-              <img src={brand7} className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition" alt="" />
+              <img
+                src={brand7}
+                className="object-contain invert:[0.3] hover:invert-[0] cursor-pointer transition"
+                alt=""
+              />
             </div>
           </SwiperSlide>
         </Swiper>
