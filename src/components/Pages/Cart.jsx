@@ -184,7 +184,7 @@ const Cart = () => {
             type="text"
             value={couponCode}
             onChange={(e) => setCouponCode(e.target.value)}
-            placeholder="Enter Coupon Code"
+            placeholder="Enter Coupon Code (freeship10)"
             className="border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-yellow-400"
           />
 
