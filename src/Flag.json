@@ -1,0 +1,24 @@
+{
+  "Data": [
+    { "country": "India", "image": "https://flagcdn.com/w40/in.png" },
+    { "country": "United States", "image": "https://flagcdn.com/w40/us.png" },
+    { "country": "United Kingdom", "image": "https://flagcdn.com/w40/gb.png" },
+    { "country": "Canada", "image": "https://flagcdn.com/w40/ca.png" },
+    { "country": "Australia", "image": "https://flagcdn.com/w40/au.png" },
+    { "country": "Germany", "image": "https://flagcdn.com/w40/de.png" },
+    { "country": "France", "image": "https://flagcdn.com/w40/fr.png" },
+    { "country": "Italy", "image": "https://flagcdn.com/w40/it.png" },
+    { "country": "Japan", "image": "https://flagcdn.com/w40/jp.png" },
+    { "country": "China", "image": "https://flagcdn.com/w40/cn.png" },
+    { "country": "Brazil", "image": "https://flagcdn.com/w40/br.png" },
+    { "country": "South Korea", "image": "https://flagcdn.com/w40/kr.png" },
+    { "country": "Russia", "image": "https://flagcdn.com/w40/ru.png" },
+    { "country": "South Africa", "image": "https://flagcdn.com/w40/za.png" },
+    { "country": "Singapore", "image": "https://flagcdn.com/w40/sg.png" },
+    { "country": "Mexico", "image": "https://flagcdn.com/w40/mx.png" },
+    { "country": "United Arab Emirates", "image": "https://flagcdn.com/w40/ae.png" },
+    { "country": "Spain", "image": "https://flagcdn.com/w40/es.png" },
+    { "country": "Netherlands", "image": "https://flagcdn.com/w40/nl.png" },
+    { "country": "Switzerland", "image": "https://flagcdn.com/w40/ch.png" }
+  ]
+}
