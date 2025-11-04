@@ -57,7 +57,7 @@ const Index = () => {
             fadeEffect={{ crossFade: true }}
           >
             {/* Slide 1 */}
-            {[ 
+            {[
               { img: heroImg, title: "SMARTWATCHES", price: "1,800" },
               { img: heroImg2, title: "PHONES", price: "9,800" },
               { img: heroImg3, title: "SPEAKERS", price: "2,500" },
@@ -241,6 +241,16 @@ const Index = () => {
           {/* Toaster */}
           <ToastContainer position="top-right" autoClose={1500} />
         </div>
+      </div>
+
+      {/* SECTION TITLE */}
+      <div className="section-title px-[8%] lg:px-[12%] my-10 text-center md:text-left">
+        <span className="text-lg sm:text-xl font-semibold bg-yellow-300 px-5 py-2 rounded-full">
+          Best Deals
+        </span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-bricolage pt-4">
+          Our Best Deals
+        </h2>
       </div>
     </>
   );
