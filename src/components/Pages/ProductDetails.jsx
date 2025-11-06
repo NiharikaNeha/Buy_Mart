@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { toast, ToastContainer } from "react-toastify";
 import { Autoplay } from "swiper/modules";
+import "swiper/css/autoplay";
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import ProductData from "../../Data.json";
@@ -310,10 +311,11 @@ const ProductDetails = () => {
       {/* Brands */}
       <div className="px-[8%] lg:px-[12%] py-10">
         <Swiper
+          modules={[Autoplay]}
           slidesPerView={2}
           spaceBetween={20}
           loop={true}
-          autoplay={{ delay: 2000 }}
+          autoplay={{ delay: 1000, disableOnInteraction: false }}
           breakpoints={{
             1399: { slidesPerView: 5 },
             1199: { slidesPerView: 5 },
@@ -321,7 +323,6 @@ const ProductDetails = () => {
             575: { slidesPerView: 3 },
             0: { slidesPerView: 3 },
           }}
-          modules={Autoplay}
         >
           <SwiperSlide>
             <div className="flex items-center justify-center h-20">
