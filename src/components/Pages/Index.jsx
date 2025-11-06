@@ -857,7 +857,7 @@ const Index = () => {
               <div className="text-2xl font-bold text-gray-700 p-2 px-5">
                 <sup>₹</sup>
                 748
-                <sup>98</sup>
+                <sup>99</sup>
               </div>
             </small>
           </div>
