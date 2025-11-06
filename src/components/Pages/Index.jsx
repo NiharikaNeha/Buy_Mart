@@ -249,8 +249,162 @@ const Index = () => {
           Best Deals
         </span>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-bricolage pt-4">
-          Our Best Deals!
+          Our Best Deals
         </h2>
+      </div>
+      {/* Best Details */}
+      <div className="px-[8%] lg:px-[10%] py-20 bg-gradient-to-b from-yellow-50 to-white">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          {/* LEFT SIDE PRODUCT */}
+          <div className="lg:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-5">
+            {products.slice(0, 4).map((product) => (
+              <div
+                key={product.Id}
+                className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center border border-gray-200 hover:shadow-xl transition duration-300 group cursor-pointer"
+              >
+                <p className="text-xs text-white font-bold mb-2 bg-red-600 px-3 py-1 rounded">
+                  {product.Category}
+                </p>
+
+                <img
+                  src={product.ProductsImage}
+                  alt={product.Name}
+                  className="w-4/5 h-28 object-contain transition-transform duration-300 group-hover:scale-105"
+                  onClick={() => navigate(`/product/${product.Id}`)}
+                />
+
+                <h4
+                  onClick={() => navigate(`/product/${product.Id}`)}
+                  className="text-sm sm:text-base font-medium mt-3 text-gray-800 hover:underline text-center line-clamp-2"
+                >
+                  {product.Name}
+                </h4>
+
+                <div className="flex mt-3 items-center justify-between w-full">
+                  {product.OldPrice ? (
+                    <div className="text-sm">
+                      <span className="line-through text-gray-400">
+                        ₹{product.OldPrice}
+                      </span>{" "}
+                      <span className="text-red-600 font-bold">
+                        ₹{product.Price}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="text-sm font-bold">₹{product.Price}</div>
+                  )}
+
+                  <button
+                    className="bg-yellow-500 text-white rounded-full w-[32px] h-[32px] flex items-center justify-center hover:bg-red-500 hover:shadow-xl transition"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    <LuShoppingCart className="text-[18px]" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* MIDDLE: SPECIAL OFFER */}
+          <div className="lg:col-span-2 bg-white border-2 border-yellow-400 p-8 rounded-2xl flex flex-col items-center justify-center text-center relative shadow-md hover:shadow-lg transition-all duration-300">
+            <span className="text-lg sm:text-xl text-white font-bold mb-1 bg-red-600 px-4 py-2 rounded">
+              Special Offer
+            </span>
+
+            <div className="absolute top-6 right-6 bg-yellow-400 text-white rounded-full h-14 w-14 flex flex-col items-center justify-center font-bold text-sm leading-tight shadow-md">
+              Save <br /> ₹120
+            </div>
+
+            <img
+              src={specialOffer.ProductsImage}
+              alt={specialOffer.Name}
+              className="w-2/3 mx-auto my-6 object-contain transition-transform duration-300 hover:scale-105"
+            />
+
+            <h3 className="text-gray-700 text-base sm:text-lg font-bold">
+              {specialOffer.Name}
+            </h3>
+
+            <div className="mt-2">
+              <span className="line-through text-gray-500">
+                ₹{specialOffer.OldPrice}
+              </span>{" "}
+              <span className="text-red-600 text-lg sm:text-xl font-bold">
+                ₹{specialOffer.Price}
+              </span>
+            </div>
+
+            <div className="flex justify-between w-full mt-6 text-xs sm:text-sm font-bold">
+              <span>Available: 6</span>
+              <span>Already Sold: 28</span>
+            </div>
+
+            <div className="w-full bg-gray-200 h-2 rounded-full mt-2 overflow-hidden">
+              <div className="bg-yellow-400 w-1/5 h-full"></div>
+            </div>
+
+            <p className="mt-3 text-gray-700 text-xs sm:text-sm">
+              Hurry Up! Offer ends in:
+            </p>
+
+            <button
+              className="absolute bottom-4 right-4 bg-yellow-500 text-white rounded-full w-[38px] h-[38px] flex items-center justify-center hover:bg-red-500 hover:shadow-xl transition-transform duration-300 hover:scale-105"
+              onClick={() => handleAddToCart(specialOffer)}
+            >
+              <LuShoppingCart className="text-[20px]" />
+            </button>
+          </div>
+
+          {/* RIGHT SIDE PRODUCT */}
+          <div className="lg:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-5">
+            {products.slice(4, 8).map((product) => (
+              <div
+                key={product.Id}
+                className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center border border-gray-200 hover:shadow-xl transition duration-300 group cursor-pointer"
+              >
+                <p className="text-xs text-white font-bold mb-2 bg-red-600 px-3 py-1 rounded">
+                  {product.Category}
+                </p>
+
+                <img
+                  src={product.ProductsImage}
+                  alt={product.Name}
+                  className="w-4/5 h-28 object-contain transition-transform duration-300 group-hover:scale-105"
+                  onClick={() => navigate(`/product/${product.Id}`)}
+                />
+
+                <h4
+                  onClick={() => navigate(`/product/${product.Id}`)}
+                  className="text-sm sm:text-base font-medium mt-3 text-gray-800 hover:underline text-center line-clamp-2"
+                >
+                  {product.Name}
+                </h4>
+
+                <div className="flex mt-3 items-center justify-between w-full">
+                  {product.OldPrice ? (
+                    <div className="text-sm">
+                      <span className="line-through text-gray-400">
+                        ₹{product.OldPrice}
+                      </span>{" "}
+                      <span className="text-red-600 font-bold">
+                        ₹{product.Price}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="text-sm font-bold">₹{product.Price}</div>
+                  )}
+
+                  <button
+                    className="bg-yellow-500 text-white rounded-full w-[32px] h-[32px] flex items-center justify-center hover:bg-red-500 hover:shadow-xl transition"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    <LuShoppingCart className="text-[18px]" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

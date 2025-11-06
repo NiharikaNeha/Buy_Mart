@@ -35,7 +35,7 @@ const Cart = () => {
 
   const removeFromCart = (id) => {
     const confirmRemove = window.confirm(
-      "Do you want to remove this item from your cart?"
+      "Do You Want To Remove This Item From Your Cart?"
     );
     if (!confirmRemove) return;
     const updatedCart = cart.filter((item) => item.Id !== id);
@@ -141,7 +141,7 @@ const Cart = () => {
             {cart.length === 0 && (
               <tr>
                 <td colSpan="5" className="py-12 text-center text-gray-500">
-                  <FaShoppingBasket className="inline-block text-4xl mb-2" />
+                  <FaShoppingBasket className="inline-block text-4xl mb-2 text-red-600" />
                   <p>Your Cart Is Empty!</p>
                 </td>
               </tr>
