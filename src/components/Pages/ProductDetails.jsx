@@ -320,7 +320,7 @@ const ProductDetails = () => {
             1399: { slidesPerView: 5 },
             1199: { slidesPerView: 5 },
             991: { slidesPerView: 4 },
-            575: { slidesPerView: 3 },
+            575: { slidesPerView: 2 },
             0: { slidesPerView: 3 },
           }}
         >
