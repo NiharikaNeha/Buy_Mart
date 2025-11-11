@@ -321,7 +321,7 @@ const ProductDetails = () => {
             1199: { slidesPerView: 5 },
             991: { slidesPerView: 4 },
             575: { slidesPerView: 3 },
-            0: { slidesPerView: 3 },
+            0: { slidesPerView: 2 },
           }}
         >
           <SwiperSlide>
