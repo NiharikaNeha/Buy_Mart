@@ -957,6 +957,218 @@ const Index = () => {
       </div>
 
       {/* Top Products */}
+      <div className="px-[8%] lg:px-[12%] py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8">
+          {/* Col-1 */}
+          <div>
+            <h2 className="top-product text-xl font-bricolage font-semibold border-b border-yellow-200 pb-1">
+              Featured Products
+            </h2>
+            <div className="flex flex-col gap-5 mt-9">
+              {products.slice(0,3).map((product) => (
+                <div
+                  key={product.Id}
+                  className="bg-white shadow-md rounded-xl p-4 flex-col items-center hover:shadow-xl transition duration-300 group border border-gray-200 cursor-pointer"
+                >
+                  <p className="text-xs text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">
+                    {product.Category}
+                  </p>
+                  <img
+                    src={product.ProductsImage}
+                    alt={product.Name}
+                    className="w-4/5 h-32 object-contain group-hover:scale-105 transition-transform duration-300"
+                    onClick={() => navigate(`/product/${product.Id}`)}
+                  />
+                  <h4
+                    onClick={() => navigate(`/product/${product.Id}`)}
+                    className="text-sm sm:text-base md:text-lg font-medium mt-3 text-gray-800 hover:underline line-clamp-2"
+                  >
+                    {product.Name}
+                  </h4>
+                  <div className="flex mt-5 flex-row items-center justify-between w-full">
+                    {product.OldPrice ? (
+                      <div className="mt-1 text-sm sm:text-md">
+                        <span className="line text-gray-400">
+                          ₹{product.OldPrice}
+                        </span>{" "}
+                        <span className="text-red-600 font-bold">
+                          ₹{product.Price}
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="text-sm sm:text-lg font-bold mt-1">
+                        ₹{product.Price}
+                      </div>
+                    )}
+                    <button
+                      className="bg-yellow-500 text-white rounded-full w-[35px] h-[35px] flex items-center justify-center hover:bg-red-500 hover:shadow-xl transition"
+                      onClick={() => handleAddToCart(product)}
+                    >
+                      <LuShoppingCart className="text-[20px] font-bold" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Col-2 */}
+          <div>
+            <h2 className="top-product text-xl font-bricolage font-semibold border-b border-yellow-200 pb-1">
+              Order Products
+            </h2>
+            <div className="flex flex-col gap-5 mt-9">
+              {products.slice(3, 6).map((product) => (
+                <div
+                  key={product.Id}
+                  className="bg-white shadow-md rounded-xl p-4 flex-col items-center hover:shadow-xl transition duration-300 group border border-gray-200 cursor-pointer"
+                >
+                  <p className="text-xs text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">
+                    {product.Category}
+                  </p>
+                  <img
+                    src={product.ProductsImage}
+                    alt={product.Name}
+                    className="w-4/5 h-32 object-contain group-hover:scale-105 transition-transform duration-300"
+                    onClick={() => navigate(`/product/${product.Id}`)}
+                  />
+                  <h4
+                    onClick={() => navigate(`/product/${product.Id}`)}
+                    className="text-sm sm:text-base md:text-lg font-medium mt-3 text-gray-800 hover:underline line-clamp-2"
+                  >
+                    {product.Name}
+                  </h4>
+                  <div className="flex mt-5 flex-row items-center justify-between w-full">
+                    {product.OldPrice ? (
+                      <div className="mt-1 text-sm sm:text-md">
+                        <span className="line text-gray-400">
+                          ₹{product.OldPrice}
+                        </span>{" "}
+                        <span className="text-red-600 font-bold">
+                          ₹{product.Price}
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="text-sm sm:text-lg font-bold mt-1">
+                        ₹{product.Price}
+                      </div>
+                    )}
+                    <button
+                      className="bg-yellow-500 text-white rounded-full w-[35px] h-[35px] flex items-center justify-center hover:bg-red-500 hover:shadow-xl transition"
+                      onClick={() => handleAddToCart(product)}
+                    >
+                      <LuShoppingCart className="text-[20px] font-bold" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Col-3 */}
+          <div>
+            <h2 className="top-product text-xl font-bricolage font-semibold border-b border-yellow-200 pb-1">
+              Top Rated Products
+            </h2>
+            <div className="flex flex-col gap-5 mt-9">
+              {products.slice(6, 9).map((product) => (
+                <div
+                  key={product.Id}
+                  className="bg-white shadow-md rounded-xl p-4 flex-col items-center hover:shadow-xl transition duration-300 group border border-gray-200 cursor-pointer"
+                >
+                  <p className="text-xs text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">
+                    {product.Category}
+                  </p>
+                  <img
+                    src={product.ProductsImage}
+                    alt={product.Name}
+                    className="w-4/5 h-32 object-contain group-hover:scale-105 transition-transform duration-300"
+                    onClick={() => navigate(`/product/${product.Id}`)}
+                  />
+                  <h4
+                    onClick={() => navigate(`/product/${product.Id}`)}
+                    className="text-sm sm:text-base md:text-lg font-medium mt-3 text-gray-800 hover:underline line-clamp-2"
+                  >
+                    {product.Name}
+                  </h4>
+                  <div className="flex mt-5 flex-row items-center justify-between w-full">
+                    {product.OldPrice ? (
+                      <div className="mt-1 text-sm sm:text-md">
+                        <span className="line text-gray-400">
+                          ₹{product.OldPrice}
+                        </span>{" "}
+                        <span className="text-red-600 font-bold">
+                          ₹{product.Price}
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="text-sm sm:text-lg font-bold mt-1">
+                        ₹{product.Price}
+                      </div>
+                    )}
+                    <button
+                      className="bg-yellow-500 text-white rounded-full w-[35px] h-[35px] flex items-center justify-center hover:bg-red-500 hover:shadow-xl transition"
+                      onClick={() => handleAddToCart(product)}
+                    >
+                      <LuShoppingCart className="text-[20px] font-bold" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Col-4 */}
+          <div>
+            <h2 className="top-product text-xl font-bricolage font-semibold border-b border-yellow-200 pb-1">
+              Top Sales Products
+            </h2>
+            <div className="flex flex-col gap-5 mt-9">
+              {products.slice(9, 12).map((product) => (
+                <div
+                  key={product.Id}
+                  className="bg-white shadow-md rounded-xl p-4 flex-col items-center hover:shadow-xl transition duration-300 group border border-gray-200 cursor-pointer"
+                >
+                  <p className="text-xs text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">
+                    {product.Category}
+                  </p>
+                  <img
+                    src={product.ProductsImage}
+                    alt={product.Name}
+                    className="w-4/5 h-32 object-contain group-hover:scale-105 transition-transform duration-300"
+                    onClick={() => navigate(`/product/${product.Id}`)}
+                  />
+                  <h4
+                    onClick={() => navigate(`/product/${product.Id}`)}
+                    className="text-sm sm:text-base md:text-lg font-medium mt-3 text-gray-800 hover:underline line-clamp-2"
+                  >
+                    {product.Name}
+                  </h4>
+                  <div className="flex mt-5 flex-row items-center justify-between w-full">
+                    {product.OldPrice ? (
+                      <div className="mt-1 text-sm sm:text-md">
+                        <span className="line text-gray-400">
+                          ₹{product.OldPrice}
+                        </span>{" "}
+                        <span className="text-red-600 font-bold">
+                          ₹{product.Price}
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="text-sm sm:text-lg font-bold mt-1">
+                        ₹{product.Price}
+                      </div>
+                    )}
+                    <button
+                      className="bg-yellow-500 text-white rounded-full w-[35px] h-[35px] flex items-center justify-center hover:bg-red-500 hover:shadow-xl transition"
+                      onClick={() => handleAddToCart(product)}
+                    >
+                      <LuShoppingCart className="text-[20px] font-bold" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

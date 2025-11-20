@@ -190,3 +190,17 @@
  .underline {
   text-decoration: underline;
  }
+
+ .top-product{
+  position: relative;
+ }
+
+ .top-product:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100px;
+  height: 2px;
+  background-color: var(--yellow);
+}
