@@ -1125,7 +1125,7 @@ const Index = () => {
 
           <img
             src={bannerCard1}
-            className="w-full object-contain h-[400px] md:h-[500px] lg:h-[600px]"
+            className="w-full object-contain h-[600px] md:h-[500px] lg:h-[800px]"
             alt=""
           />
         </div>
