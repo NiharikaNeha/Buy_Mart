@@ -276,10 +276,10 @@ const Index = () => {
                 </p>
 
                 <img
+                  onClick={() => navigate(`/product/${product.Id}`)}
                   src={product.ProductsImage}
                   alt={product.Name}
                   className="w-4/5 h-28 object-contain transition-transform duration-300 group-hover:scale-105"
-                  onClick={() => navigate(`/product/${product.Id}`)}
                 />
 
                 <h4
@@ -945,6 +945,18 @@ const Index = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+
+      {/* SECTION TITLE-4  */}
+      <div className="section-title px-[8%] lg:px-[12%] my-10 text-center md:text-left pt-8">
+        <span className="text-lg sm:text-xl font-semibold bg-yellow-300 px-5 py-2 rounded-full">
+          Top Products
+        </span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-bricolage pt-4">
+          Our Top Products
+        </h2>
+      </div>
+
+      {/* Top Products */}
     </>
   );
 };
