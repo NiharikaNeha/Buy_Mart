@@ -845,31 +845,32 @@ const Index = () => {
 
       {/* Banner-2 */}
       <div className="px-[5%] sm:px-[8%] lg:px-[12%] py-10">
-  <div
-    className="banner-1 flex flex-col justify-center gap-5 bg-cover bg-center rounded-xl p-5 sm:p-6 md:p-8"
-    style={{ backgroundImage: `url(${bannerImg2})` }}
-  >
-    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-      
-      {/* Title */}
-      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light font-bricolage leading-tight">
-        SHOP AND <span className="font-bold">SAVE BIG</span> <br className="sm:hidden" />
-        ON HOTTEST TABLETS
-      </h3>
+        <div
+          className="banner-1 flex flex-col justify-center gap-5 bg-cover bg-center rounded-xl p-5 sm:p-6 md:p-8"
+          style={{ backgroundImage: `url(${bannerImg2})` }}
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            {/* Title */}
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light font-bricolage leading-tight">
+              SHOP AND <span className="font-bold">SAVE BIG</span>{" "}
+              <br className="sm:hidden" />
+              ON HOTTEST TABLETS
+            </h3>
 
-      {/* Price Badge */}
-      <small className="bg-yellow-500 text-white text-lg sm:text-xl px-4 py-2 text-center w-fit rounded-md rounded-tl-none">
-        <span className="font-thin text-sm sm:text-md text-black block">STARTING AT</span>
-        <div className="text-xl sm:text-2xl font-bold text-gray-700 p-2 px-5">
-          <sup>₹</sup>
-          748
-          <sup>99</sup>
+            {/* Price Badge */}
+            <small className="bg-yellow-500 text-white text-lg sm:text-xl px-4 py-2 text-center w-fit rounded-md rounded-tl-none">
+              <span className="font-thin text-sm sm:text-md text-black block">
+                STARTING AT
+              </span>
+              <div className="text-xl sm:text-2xl font-bold text-gray-700 p-2 px-5">
+                <sup>₹</sup>
+                748
+                <sup>99</sup>
+              </div>
+            </small>
+          </div>
         </div>
-      </small>
-
-    </div>
-  </div>
-</div>
+      </div>
 
       {/* Brands */}
       <div className="px-[8%] lg:px-[12%] py-10">
@@ -1122,10 +1123,9 @@ const Index = () => {
               ))}
             </div>
           </div>
-
           <img
             src={bannerCard1}
-            className="w-full object-contain h-[600px] md:h-[500px] lg:h-[800px]"
+            className="w-full object-contain h-[700px] md:h-[800px] lg:h-[1000px]"
             alt=""
           />
         </div>
