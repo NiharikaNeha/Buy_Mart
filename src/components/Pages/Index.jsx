@@ -13,6 +13,7 @@ import heroImg from "../../assets/hero.png";
 import heroImg2 from "../../assets/hero-2.png";
 import heroImg3 from "../../assets/hero-3.png";
 import bannerImg2 from "../../assets/banner.jpg";
+import bannerCard1 from "../../assets/banner-card-3.jpg";
 import banner1 from "../../assets/banner-1.jpg";
 import banner2 from "../../assets/banner-2.jpg";
 import banner3 from "../../assets/banner-3.jpg";
@@ -429,17 +430,18 @@ const Index = () => {
       {/* BEST SALES */}
       <div className="px-[8%] lg:px-[12%] pb-20">
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
+          slidesPerView={1}
+          spaceBetween={20}
           loop={true}
+          autoplay={{ delay: 2500 }}
           modules={[Autoplay]}
-          autoplay={{
-            1399: { slidesPerView: 3 },
-            1199: { slidesPerView: 3 },
-            991: { slidesPerView: 2 },
-            767: { slidesPerView: 2 },
-            575: { slidesPerView: 1 },
+          breakpoints={{
             0: { slidesPerView: 1 },
+            575: { slidesPerView: 1 },
+            767: { slidesPerView: 2 },
+            991: { slidesPerView: 3 },
+            1199: { slidesPerView: 4 },
+            1399: { slidesPerView: 4 },
           }}
           style={{ padding: "20px" }}
         >
@@ -842,27 +844,32 @@ const Index = () => {
       </div>
 
       {/* Banner-2 */}
-      <div className="px-[8%] lg:px-[12%] py-10">
-        <div
-          className="banner-1 flex flex-col justify-center gap-5 bg-cover bg-center rounded-xl md:p-8"
-          style={{ backgroundImage: `url(${bannerImg2})` }}
-        >
-          <div className="flex items-center gap-4">
-            <h3 className="text-3xl font-light font-bricolage">
-              SHOP AND <span className="font-bold">SAVE BIG</span> ON HOTTEST
-              TABLETS
-            </h3>
-            <small className="bg-yellow-500 text-white text-xl px-4 py-2 text-center w-fit rounded-md rounded-tl-none hide">
-              <span className="font-thin text-md text-black">STARTING AT</span>
-              <div className="text-2xl font-bold text-gray-700 p-2 px-5">
-                <sup>₹</sup>
-                748
-                <sup>99</sup>
-              </div>
-            </small>
-          </div>
+      <div className="px-[5%] sm:px-[8%] lg:px-[12%] py-10">
+  <div
+    className="banner-1 flex flex-col justify-center gap-5 bg-cover bg-center rounded-xl p-5 sm:p-6 md:p-8"
+    style={{ backgroundImage: `url(${bannerImg2})` }}
+  >
+    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+      
+      {/* Title */}
+      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light font-bricolage leading-tight">
+        SHOP AND <span className="font-bold">SAVE BIG</span> <br className="sm:hidden" />
+        ON HOTTEST TABLETS
+      </h3>
+
+      {/* Price Badge */}
+      <small className="bg-yellow-500 text-white text-lg sm:text-xl px-4 py-2 text-center w-fit rounded-md rounded-tl-none">
+        <span className="font-thin text-sm sm:text-md text-black block">STARTING AT</span>
+        <div className="text-xl sm:text-2xl font-bold text-gray-700 p-2 px-5">
+          <sup>₹</sup>
+          748
+          <sup>99</sup>
         </div>
-      </div>
+      </small>
+
+    </div>
+  </div>
+</div>
 
       {/* Brands */}
       <div className="px-[8%] lg:px-[12%] py-10">
@@ -965,7 +972,7 @@ const Index = () => {
               Featured Products
             </h2>
             <div className="flex flex-col gap-5 mt-9">
-              {products.slice(0,3).map((product) => (
+              {products.slice(1, 4).map((product) => (
                 <div
                   key={product.Id}
                   className="bg-white shadow-md rounded-xl p-4 flex-col items-center hover:shadow-xl transition duration-300 group border border-gray-200 cursor-pointer"
@@ -1017,7 +1024,7 @@ const Index = () => {
               Order Products
             </h2>
             <div className="flex flex-col gap-5 mt-9">
-              {products.slice(3, 6).map((product) => (
+              {products.slice(5, 8).map((product) => (
                 <div
                   key={product.Id}
                   className="bg-white shadow-md rounded-xl p-4 flex-col items-center hover:shadow-xl transition duration-300 group border border-gray-200 cursor-pointer"
@@ -1069,58 +1076,6 @@ const Index = () => {
               Top Rated Products
             </h2>
             <div className="flex flex-col gap-5 mt-9">
-              {products.slice(6, 9).map((product) => (
-                <div
-                  key={product.Id}
-                  className="bg-white shadow-md rounded-xl p-4 flex-col items-center hover:shadow-xl transition duration-300 group border border-gray-200 cursor-pointer"
-                >
-                  <p className="text-xs text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">
-                    {product.Category}
-                  </p>
-                  <img
-                    src={product.ProductsImage}
-                    alt={product.Name}
-                    className="w-4/5 h-32 object-contain group-hover:scale-105 transition-transform duration-300"
-                    onClick={() => navigate(`/product/${product.Id}`)}
-                  />
-                  <h4
-                    onClick={() => navigate(`/product/${product.Id}`)}
-                    className="text-sm sm:text-base md:text-lg font-medium mt-3 text-gray-800 hover:underline line-clamp-2"
-                  >
-                    {product.Name}
-                  </h4>
-                  <div className="flex mt-5 flex-row items-center justify-between w-full">
-                    {product.OldPrice ? (
-                      <div className="mt-1 text-sm sm:text-md">
-                        <span className="line text-gray-400">
-                          ₹{product.OldPrice}
-                        </span>{" "}
-                        <span className="text-red-600 font-bold">
-                          ₹{product.Price}
-                        </span>
-                      </div>
-                    ) : (
-                      <div className="text-sm sm:text-lg font-bold mt-1">
-                        ₹{product.Price}
-                      </div>
-                    )}
-                    <button
-                      className="bg-yellow-500 text-white rounded-full w-[35px] h-[35px] flex items-center justify-center hover:bg-red-500 hover:shadow-xl transition"
-                      onClick={() => handleAddToCart(product)}
-                    >
-                      <LuShoppingCart className="text-[20px] font-bold" />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Col-4 */}
-          <div>
-            <h2 className="top-product text-xl font-bricolage font-semibold border-b border-yellow-200 pb-1">
-              Top Sales Products
-            </h2>
-            <div className="flex flex-col gap-5 mt-9">
               {products.slice(9, 12).map((product) => (
                 <div
                   key={product.Id}
@@ -1167,6 +1122,12 @@ const Index = () => {
               ))}
             </div>
           </div>
+
+          <img
+            src={bannerCard1}
+            className="w-full object-contain h-[400px] md:h-[500px] lg:h-[600px]"
+            alt=""
+          />
         </div>
       </div>
     </>
