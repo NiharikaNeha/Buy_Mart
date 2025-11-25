@@ -53,7 +53,7 @@ const Index = () => {
 
   return (
     <>
-      <div className="bg-element"></div>
+      <div className="element"></div>
 
       {/* HERO SECTION */}
       <div className="hero-bg">
