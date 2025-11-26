@@ -48,7 +48,7 @@ const Index = () => {
 
     setTimeout(() => {
       navigate("/cart");
-    }, 2000);
+    }, 3000);
   };
 
   return (
