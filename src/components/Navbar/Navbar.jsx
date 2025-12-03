@@ -370,7 +370,7 @@ const Navbar = () => {
                 Wishlist
               </Link>
               <Link to="/cart" className="px-3 py-2 border rounded">
-                Car
+                Cart
               </Link>
             </div>
           </div>
